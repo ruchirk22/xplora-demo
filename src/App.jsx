@@ -35,7 +35,7 @@ const thinkingSteps = [
 const Logo = ({ className }) => (
     <svg className={className} viewBox="0 0 130 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <text x="36" y="24" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold" fill="#333">Xplora</text>
-        <path d="M4 28L16 4L28 28" stroke="#38dece" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M4 28L16 4L28 28" stroke="#40c1ac" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
 );
 
@@ -61,7 +61,7 @@ const ThinkingAnimation = ({ steps, durationPerStep }) => {
         <div className="flex flex-col items-center justify-center space-y-4">
             <div className="relative w-16 h-16">
                 <div className="absolute inset-0 border-4 border-gray-200 rounded-full"></div>
-                <div className="absolute inset-0 border-4 border-t-[#38dece] rounded-full animate-spin"></div>
+                <div className="absolute inset-0 border-4 border-t-[#40c1ac] rounded-full animate-spin"></div>
             </div>
             <p className="text-gray-600 text-lg text-center transition-all duration-300 w-80">{steps[currentStep]}</p>
         </div>
@@ -127,7 +127,7 @@ const FeatureCard = ({ title, description, enabled, onClick, isWorking }) => (
                 <button
                     onClick={enabled ? onClick : null}
                     disabled={!enabled}
-                    className={`w-full text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center ${enabled ? 'bg-[#38dece] text-white hover:bg-[#2dbab0]' : 'bg-gray-200 text-gray-500 cursor-not-allowed'}`}
+                    className={`w-full text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center ${enabled ? 'bg-[#40c1ac] text-white hover:bg-[#2dbab0]' : 'bg-gray-200 text-gray-500 cursor-not-allowed'}`}
                 >
                     {isWorking ? 'Start' : 'View Process'} <ArrowRightIcon className="ml-2 h-4 w-4" />
                 </button>
@@ -247,15 +247,15 @@ const FeaturePage = ({ feature, onBack }) => {
                     <div className="w-full max-w-2xl text-center animate-fade-in">
                         <h2 className="text-3xl font-bold text-gray-800">Upload Your Document</h2>
                         <p className="mt-2 text-gray-600">{getInputPrompt()}</p>
-                        <label htmlFor="file-upload" className="mt-8 relative cursor-pointer bg-white rounded-xl font-medium text-[#38dece] hover:text-[#2dbab0]">
-                            <div className="w-full flex flex-col justify-center items-center px-6 py-16 border-2 border-gray-300 border-dashed rounded-xl transition-colors hover:border-[#38dece]">
+                        <label htmlFor="file-upload" className="mt-8 relative cursor-pointer bg-white rounded-xl font-medium text-[#40c1ac] hover:text-[#2dbab0]">
+                            <div className="w-full flex flex-col justify-center items-center px-6 py-16 border-2 border-gray-300 border-dashed rounded-xl transition-colors hover:border-[#40c1ac]">
                                 <UploadIcon className="mx-auto h-16 w-16 text-gray-400" />
                                 <span className="mt-4 text-lg text-gray-700">{fileName || "Click to upload a file"}</span>
                                 <p className="text-sm text-gray-500">XLSX, CSV, TXT, DOCX</p>
                             </div>
                             <input id="file-upload" name="file-upload" type="file" className="sr-only" onChange={handleFileChange} />
                         </label>
-                        <button onClick={handleVerify} disabled={!file} className="mt-8 w-full max-w-xs mx-auto bg-[#38dece] text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-[#2dbab0] transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed transform hover:scale-105">
+                        <button onClick={handleVerify} disabled={!file} className="mt-8 w-full max-w-xs mx-auto bg-[#40c1ac] text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-[#2dbab0] transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed transform hover:scale-105">
                             Verify Document
                         </button>
                     </div>
@@ -276,7 +276,7 @@ const FeaturePage = ({ feature, onBack }) => {
                         <CheckCircleIcon className="w-24 h-24 text-green-500 mx-auto" />
                         <h2 className="mt-6 text-3xl font-bold text-gray-800">Verification Successful!</h2>
                         <p className="mt-2 text-gray-600">Your document is compatible and ready for the next step.</p>
-                        <button onClick={handleGenerate} className="mt-8 w-full max-w-xs mx-auto bg-[#38dece] text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-[#2dbab0] transition-colors transform hover:scale-105">
+                        <button onClick={handleGenerate} className="mt-8 w-full max-w-xs mx-auto bg-[#40c1ac] text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-[#2dbab0] transition-colors transform hover:scale-105">
                             Generate Test Cases
                         </button>
                     </div>
@@ -358,19 +358,19 @@ const FeaturePage = ({ feature, onBack }) => {
                 </div>
                 <div className="mt-6 text-left space-y-4 text-gray-600">
                      <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-                        <div className="flex-shrink-0 bg-[#38dece]/20 text-[#38dece] rounded-full h-10 w-10 flex items-center justify-center font-bold">1</div>
+                        <div className="flex-shrink-0 bg-[#40c1ac]/20 text-[#40c1ac] rounded-full h-10 w-10 flex items-center justify-center font-bold">1</div>
                         <p className="ml-4">User uploads the required input file (e.g., raw notes, BRD).</p>
                     </div>
                     <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-                        <div className="flex-shrink-0 bg-[#38dece]/20 text-[#38dece] rounded-full h-10 w-10 flex items-center justify-center font-bold">2</div>
+                        <div className="flex-shrink-0 bg-[#40c1ac]/20 text-[#40c1ac] rounded-full h-10 w-10 flex items-center justify-center font-bold">2</div>
                         <p className="ml-4">Xplora verifies the document's content and structure.</p>
                     </div>
                     <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-                        <div className="flex-shrink-0 bg-[#38dece]/20 text-[#38dece] rounded-full h-10 w-10 flex items-center justify-center font-bold">3</div>
+                        <div className="flex-shrink-0 bg-[#40c1ac]/20 text-[#40c1ac] rounded-full h-10 w-10 flex items-center justify-center font-bold">3</div>
                         <p className="ml-4">The AI agent processes the input and generates the target document.</p>
                     </div>
                     <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-                        <div className="flex-shrink-0 bg-[#38dece]/20 text-[#38dece] rounded-full h-10 w-10 flex items-center justify-center font-bold">4</div>
+                        <div className="flex-shrink-0 bg-[#40c1ac]/20 text-[#40c1ac] rounded-full h-10 w-10 flex items-center justify-center font-bold">4</div>
                         <p className="ml-4">User can download the final generated file.</p>
                     </div>
                 </div>
