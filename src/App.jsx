@@ -10,11 +10,11 @@ const trainingPptBase64 = ""; // For "Generate a PPT for training"
 
 // --- Preview Data ---
 const previewData = [
-    ["T1", "PUR.0001:Supplier Registration", "Validate supplier registration Process", "Test the supplier registration end-to-end process", "Successful supplier registration with approval notification sent to the supplier.", "Initiate supplier registration - FILL required details - SUBMIT for approval - APPROVE the request - VERIFY supplier creation and notification sent."],
-    ["T2", "PUR.0002:Blanket Purchase Agreement", "Validate BPA Creation", "Test the creation and approval of a Blanket Purchase Agreement", "BPA is created successfully and communicated to the supplier.", "Navigate to Agreements - CREATE a new BPA - FILL in header and line details - SUBMIT for approval - APPROVE the BPA - VERIFY status and communication."],
-    ["T3", "PUR.0003:Purchase Order Creation", "Validate PO creation from Requisition", "Test the automated creation of a Purchase Order from an approved requisition.", "PO is created automatically and matches requisition details.", "CREATE and approve a requisition - RUN the 'Create Purchase Orders' process - FIND the generated PO - VERIFY details against the requisition."],
-    ["T4", "PUR.0004:Requisition to receipt", "End-to-end P2P cycle", "Test the complete Procure-to-Pay cycle from requisition to receipt and payment.", "All steps are completed successfully, and the invoice is paid.", "CREATE requisition - APPROVE requisition - CREATE PO - APPROVE PO - CREATE receipt - CREATE invoice - VALIDATE and PAY invoice."],
-    ["T5", "PUR.0005:Return to supplier", "Validate return to supplier process", "Test the process of returning goods to a supplier.", "Return transaction is processed correctly, and debit memo is generated.", "CREATE a return order against a PO receipt - SHIP the items back to the supplier - VERIFY inventory transaction - VERIFY debit memo creation in AP."]
+    ["UAT_PRC001", "PRC001", "Method of Supplier Registration", "• A. external registration: share supplier registration url (registration link) with prospective business relationship to supplier representative.\n• B. internal registration: registrar in the organization self can initiate registration process with ‘register supplier’ task..", "", "", ""],
+    ["UAT_PRC002", "PRC002", "Supplier user fills supplier information", "• In external registration method, supplier user will fill required information using shared url (registration link) and submit registration request.\n• In internal registration method,\n• The registrar will fill in the required information and submit the registration request..", "", "", ""],
+    ["UAT_PRC003", "PRC003", "Notification for Approval of Supplier registration request (for Prospective business relationship)", "• Notification received for supplier registration request by appropriate approver..", "", "", ""],
+    ["UAT_PRC004", "PRC004", "Review Supplier information", "• Approver (bu manager) reviews supplier data filled by supplier..\n• Approver (bu manager) can create supplier user account by checking checkbox for ‘create user’ under contact section.", "", "", ""],
+    ["UAT_PRC005", "PRC005", "Supplier user creation decision", "• Approver (bu manager) can avoid supplier user account creation by unchecking checkbox for ‘create user’ under contact section.\n• Note: to access supplier portal, supplier user account is required..", "", "", ""]
 ];
 
 const thinkingSteps = [
@@ -293,7 +293,7 @@ const FeaturePage = ({ feature, onBack }) => {
                                 <div className="border border-gray-200 rounded-lg bg-white shadow-md overflow-x-auto">
                                     <table className="min-w-full divide-y divide-gray-200">
                                         <thead className="bg-gray-50">
-                                            <tr>{["SN", "Business Process", "Test Scenario"].map(h => <th key={h} className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{h}</th>)}</tr>
+                                            <tr>{["Test Case ID", "Business Process ID", "Business Process Name"].map(h => <th key={h} className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{h}</th>)}</tr>
                                         </thead>
                                         <tbody className="bg-white divide-y divide-gray-200">
                                             {previewRows.map((row, rowIndex) => (
@@ -321,7 +321,7 @@ const FeaturePage = ({ feature, onBack }) => {
                              <div className="border border-gray-200 rounded-lg bg-white shadow-lg overflow-x-auto max-h-96">
                                 <table className="min-w-full divide-y divide-gray-200">
                                     <thead className="bg-gray-50 sticky top-0">
-                                        <tr>{["SN", "Business Process", "Test Scenario", "Description", "Expected Result", "Test Steps"].map(h => <th key={h} className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{h}</th>)}</tr>
+                                        <tr>{["Test Case ID", "Business Process ID", "Business Process Name", "Test Steps", "Actual Result", "Test Case Executed (Yes/No)", "Result (Pass/Fail)"].map(h => <th key={h} className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{h}</th>)}</tr>
                                     </thead>
                                     <tbody className="bg-white divide-y divide-gray-200">
                                         {previewData.map((row, rowIndex) => (
